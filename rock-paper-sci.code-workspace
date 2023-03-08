@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../programming workshop"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "rock-paper-sci"
+	}
+}

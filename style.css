@@ -1,0 +1,52 @@
+ #rock {
+        border:5px solid;
+        border-radius: 50px;
+        width: 100px;
+        height: 100px;
+        font-size: 22px;
+        background-color:green
+        }                                                       
+        
+        
+        
+        
+#paper {
+        border:5px solid;
+        border-radius: 50px;
+        width: 100px;
+        height: 100px;
+        font-size: 22px;
+        background-color:red
+        }
+        
+        
+#scissors {
+        
+        border:5px solid;
+        border-radius: 50px;
+        width: 100px;
+        height: 100px;
+        font-size: 22px;
+        background-color:yellow
+        }                                                       
+
+
+#score-board {
+        color: gold;
+        border:5px double;
+        width: max-content;
+        height: max-content;
+        padding: auto;
+        margin-top: 50px;
+        font-size: 22px;
+        background-color:black
+        
+}
+
+.frame {
+        margin-top: 100px;
+        background-color:black;
+        border: 10px solid;
+        color: red;
+        width: max-content;
+}
