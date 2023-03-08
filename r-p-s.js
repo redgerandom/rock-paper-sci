@@ -1,114 +1,157 @@
-const options = ['rock', 'paper', 'scissors',];
-
-let score = 0
+let score = 0;
 let cpuScore = 0;
-let message  = "Cpu won the tourney!"
-let winMessage = "You won the tourney!"
+let lossMessage  = "Cpu won the tourney!"
+let winMessage = "You won the tourney! "
+let display= "5 points wins the tourney! May the gods be in your favor!"
+// ---------------------------DISPLAY SCOREBOARD/Messages----------------------------------
 
+const options = ['rock', 'paper', 'scissors',];
+const playerText = document.getElementById("player-choice")
+const computerText = document.getElementById("computer-choice")
+const userName = document.getElementById("userName")
+const scoreBoard = document.getElementById("score-board")
+const userscore = document.getElementById('user-score')
+const cpuscore = document.getElementById('cpu-score')
+const Result = document.getElementById("result")
+const rockBtn = document.querySelector("#rock")
+const papBtn = document.querySelector("#paper")
+const sciBtn = document.querySelector("#scissors")
+//--------------------------------------------------
 
-function getComputerChoice() {
-    const choice = options[Math.floor(Math.random() * (options.length))]
-    return(choice)  
+rockBtn.addEventListener('click', () => {
+    player = options[0]
+    playerText.innerHTML = player
+    getComputerChoice()
+    play()
+    userscore.innerHTML = score
+    cpuscore.innerHTML = cpuScore
+    Result.innerHTML = result
+    check()
     
+})
+
+papBtn.addEventListener('click', () => {
+    player = options[1]
+    playerText.innerHTML = player
+    getComputerChoice()
+    play()
+    userscore.innerHTML = score
+    cpuscore.innerHTML = cpuScore
+    Result.innerHTML = result
+    check()
+})
+
+sciBtn.addEventListener('click', () => {
+    player = options[2]
+    playerText.innerHTML = player
+    getComputerChoice()
+    play()
+    userscore.innerHTML = score
+    cpuscore.innerHTML = cpuScore
+    Result.innerHTML = result
+    check()
+})
+ let player;
+
+scoreBoard.innerHTML = display 
+    
+    
+    
+    // -------------------------Functions End---------------------------------------------------
+    
+    
+    function getComputerChoice() {
+    const cchoice = options[Math.floor(Math.random() * (options.length))]
+    computerText.innerHTML = cchoice;
 }
 
 
-function getPlayerChoice(){
-    const userInput = prompt("Type 'r' for Rock, 'p' for Paper or 's' for Scissors. Best of 5 wins!").trim().toLowerCase().charAt
-    (0);
-    let choice = userInput
-{while ((choice !O= "r") && (choice != "p") && (choice != "s")) {
-    choice = prompt(choice + " is not valid. Please type: 'r' rock or 'p' paper or 's' scissors.");
-}
-if (choice == 'r') {return options[0]}
-else if (choice == 'p') { return  options[1]}
-
-else if (choice == 's') { return  options[2]}
-}
-
-}
-
-    
-
-
-
-function play(playerSelection, computerSelection) { 
+function play() { 
     
     
-    if (playerSelection ===  computerSelection ) { 
-        console.log(`${playerSelection} and ${computerSelection}: Issa tie!`);
-    
-    return "Draw";
+    if (playerText.innerHTML === computerText.innerHTML) { 
+        console.log(`${playerText.innerHTML} and ${computerText.innerHTML}: Issa tie!`);
+        result = "Draw"
+        return result
     
 }
-    else if (playerSelection === 'rock' && computerSelection === 'scissors') { console.log(`Cpu chooses ${computerSelection}`);
-             console.log(`Your ${playerSelection} smashes Cpu's ${computerSelection} :`)
-             score++
-             return "You win!"
+    else if (playerText.innerHTML === 'rock' && computerText.innerHTML == 'scissors') {
+            score++
+             console.log(`Cpu chooses ${computerText.innerHTML}`);
+             console.log(`Your ${playerText.innerHTML} smashes Cpu's ${computerText.innerHTML}`)
+            result = "You win!"    
+            return result
+
             }
             
-            else if (playerSelection === 'paper' && computerSelection === 'rock')  { 
-                console.log(`Cpu chooses ${computerSelection}`) 
-                console.log(`Your ${playerSelection} covers Cpu's ${computerSelection}`)
+            else if (playerText.innerHTML === 'paper' && computerText.innerHTML === 'rock')  { 
                 score++
-                return "You win!"}
+                console.log(`Cpu chooses ${computerText.innerHTML}`) 
+                console.log(`Your ${playerText.innerHTML} covers Cpu's ${computerText.innerHTML}`)
+                result = "You win!"
+    return result
+
+            }
                 
-                else if (playerSelection === 'scissors' && computerSelection === 'paper')  { 
-                console.log(`Cpu chooses ${computerSelection}`)
-                console.log(`Your ${playerSelection} cuts Cpu's ${computerSelection} `)
+                else if (playerText.innerHTML === 'scissors' && computerText.innerHTML === 'paper')  { 
                 score++;
-                return " You win!" 
+                console.log(`Cpu chooses ${computerText.innerHTML}`)
+                console.log (`Your ${playerText.innerHTML} cuts Cpu's ${computerText.innerHTML} `)
+                result =" You win!" 
+                return result 
             }
-                else if (playerSelection === 'rock' && computerSelection === 'paper')  { console.log(`Cpu chooses ${computerSelection}`)
-                console.log( ` Cpu's ${computerSelection} covers your ${playerSelection} `)
+                else if (playerText.innerHTML === 'rock' && computerText.innerHtmlinnerHTML === 'paper')  { console.log(`Cpu chooses ${computerText.innerHTML}`)
                 cpuScore++
-                return 'You lose :('}
+                console.log( `Cpu's ${computerText.innerHtmlinnerHTML} covers your ${playerText.innerHTML} `)
+                result = "You lose :("
+                return result
+            }
                 
-                else if (playerSelection === 'paper' && computerSelection === 'scissors')  { console.log(`Cpu chooses ${computerSelection}`)
-                console.log(`Cpu's ${computerSelection} cuts your ${playerSelection} `)
+                else if (playerText.innerHTML === 'paper' && computerText.innerHTML === 'scissors')  { console.log(`Cpu chooses ${computerText.innerHTML}`)
                 cpuScore++
-                return 'You lose :('}
+                console.log(`Cpu's ${computerText.innerHTML} cuts your ${playerText.innerHTML} `)
+                result ='You lose :('
+                return result
+            }
                 
-                else if (playerSelection === 'scissors' && computerSelection === 'rock')  { console.log(`Cpu chooses ${computerSelection}`) 
-                console.log(`Cpu's ${computerSelection} smashes your ${playerSelection}`)
+                else if(playerText.innerHTML === 'scissors' && computerText.innerHTML === 'rock')  { console.log(`Cpu chooses ${computerText.innerHTML}`) 
                 cpuScore++
-                return 'You lose :('}
+                console.log(`Cpu's ${computerText.innerHTML} smashes your ${playerText.innerHTML}`)
+                result ='You lose :('
+                return result
+            } 
+            
+            { 
+        }
+    }
 
-
-                else { getPlayerChoice()
-                    
-            }
-                
-            }
+    function check() { 
+     { 
+        // console.log(`Round ${i}`)
+        // const player = getPlayerChoice()
+        // const computer = getComputerChoice
+        // console.log(`Your score = ${score}`, `Cpu-score = ${cpuScore}`)
+    
+        if (score == 5 ) { console.log;
+            let finalScore = 
+            `Final score:  ${score} - ${cpuScore}
+            User wins the tourney!`
+            alert (finalScore)
+            location.reload()
+            
+        }
+        else if (cpuScore == 5 )  {
+            let finalScore = 
+            `Final score:  ${cpuScore} - ${score} 
+            Cpu wins the tourney!`
+            alert (finalScore)
+            location.reload()
 
             
-
-
-function game() {
-    
-    
-    for (let i = 1; i <= 5; i++) { 
-        console.log(`Round ${i}`)
-        const playerSelection = getPlayerChoice()
-        const computerSelection = getComputerChoice();
-        console.log(play(playerSelection, computerSelection));
-        console.log(`Your score = ${score}`, `Cpu-score = ${cpuScore}`)
-        
-
-        if (i == 5) {if (score > cpuScore) { console.log(winMessage);
-        }
-        else if (score == cpuScore) {console.log('A draw!!!');}
-
-        else {console.log(message);}
-
         }
 
-    } 
-    
-
+        }
+     
+    }
   
-}   
-
-console.log('Rocks, papers , scissors tourney begin!');
-game()
-
+   

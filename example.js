@@ -3,7 +3,7 @@ function getComputerChoice() {
   
     if (choice < 1 / 3) {
       return "rock";
-    } else if (choice >= 1 / 3 && choice < 2 / 3) {
+    } else if (choiceplay >= 1 / 3 && choice < 2 / 3) {
       return "paper";
     } else {
       return "scissors";
@@ -45,7 +45,7 @@ function getComputerChoice() {
     let computerScore = 0;
     let playerScore = 0;
   
-    for (let i = 1; i < rounds; i++) { // ISSUE STARTS ON THIS LINE
+    for (let i = 1; i < rounds; i++) { 
       console.log(`round: ${i}`)
       if (play() == "Player") {
         playerScore += 1;

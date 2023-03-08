@@ -1,22 +1,48 @@
-so I finished the first few steps of the assignment
-Let's look at some of the code
+workflow
 
-<!-- if (userInput) {
-    let playerChoice = userInput.trim().toLowerCase().charAt(0)
-    if (playerChoice === "r") { console.log("rock");
-    }
-    if (playerChoice === "p") { console.log("paper");
-    }
-    if (playerChoice === "s") { console.log("scissors");
-        
-    }
+Some I'm visualizing jow i want my game to be  I want a scorboard and a winning message Let's put that into a  section
 
-    else {console.log('invalid input');} -->
+<!-- let score = 0
+let cpuScore = 0;
+let message  = "Cpu won the tourney!"
+let winMessage = "You won the tourney!" -->
 
-I learned and impelemted a bunch of string methods so i can handlle the user input a bit better 
+Now tha
 
-<!-- userInput.trim().toLowerCase().charAt(0) --> 
+Next I'll need some options
+all options that the user can use within the rules of the game
+let's put that into a section. Put these options into varriables
+
+<!-- const options = ['rock', 'paper', 'scissors',]; -->
+
+Now lets make some functions
+
+we need to make the logic of computers choice
 
 
-basically trims the response down to one letter. So whatever the user enters get reads back the first letter in lowercase.
-At that point, I can set some conditions ('r' for rock 'p' for paper etc)
+<!-- function getComputerChoice() {
+    const choice = options[Math.floor(Math.random() * (options.length))]
+    return(choice)} -->
+
+
+Now we need to set logic of handling the user input
+<!-- 
+function getPlayerChoice(){
+    const userInput = prompt("Type 'r' for Rock, 'p' for Paper or 's' for Scissors. Best of 5 wins!").trim().toLowerCase().charAt
+    (0);
+    let choice = userInput
+
+ {while ((choice != "r") && (choice != "p") && (choice != "s")) {
+    choice = prompt(choice + " is not valid. Please type: 'r' rock or 'p' paper or 's' scissors.");
+}
+if (choice == 'r') {return options[0]}
+e   lse if (choice == 'p') { return  options[1]}
+
+else if (choice == 's') { return  options[2]}
+}
+
+} -->
+
+I make sure to handle the invalid input first because that's harder. I do whis with a while loop   
+
+
