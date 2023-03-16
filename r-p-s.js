@@ -63,7 +63,7 @@ scoreBoard.innerHTML = display
     function getComputerChoice() {
     const cchoice = options[Math.floor(Math.random() * (options.length))]
     computerText.innerHTML = cchoice;
-}
+}f
 
 
 function play() { 
